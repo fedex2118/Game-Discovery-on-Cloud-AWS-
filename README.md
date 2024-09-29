@@ -3,7 +3,7 @@ The whole system architecture was made to pass the "Cloud Computing" exam for th
 <br>It was implemented using Spring Boot with microservices pattern, Swagger technology (SpringDoc), WebClient, Hibernate, Redis Cache, MySQL DB, Docker and AWS.
 <br><br>This repository contains all the projects (microservices and GatewayAPI) implementations, DB scripts and also test implementation part (Python_Locust) that was used directly to test the services on AWS.
 
-<br>More details about the architecture and deployment can be read on the <a href="Game Discovery Report.pdf"></a>
+<br>More details about the architecture and deployment can be read on the <a href="/Game Discovery Report.pdf"></a>
 
 # AWS Deployment Diagram
 
