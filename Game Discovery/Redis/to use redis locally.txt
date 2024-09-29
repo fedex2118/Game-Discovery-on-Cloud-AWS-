@@ -1,0 +1,14 @@
+docker pull redis
+
+
+docker run --name redis-service -p 6379:6379 -d redis redis-server --requirepass "my-redis-password"
+
+
+adjust your spring data project to enable comunication via redis
+
+
+
+to check connection to redis locally use: go to cmd and type bash, inside u have ubuntu on wsl you can use 'redis-cli -h localhost -p 6379 -a my-redis-password'.
+
+
+
