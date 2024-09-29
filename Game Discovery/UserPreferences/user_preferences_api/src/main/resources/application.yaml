@@ -1,0 +1,27 @@
+server:
+  port: 8082
+
+spring:
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+
+application:
+  # Properties for development purposes only. 
+  # If development is set to true the main authentication process will be skipped.
+  # If development is set to true authentication process will only check for role defined below.
+  dev-config:
+    development: true
+    role: 'ADMIN'
+    username: 'DEV'
+  jwt-config:
+    secret-key: ${JWT_SECRET_KEY}
