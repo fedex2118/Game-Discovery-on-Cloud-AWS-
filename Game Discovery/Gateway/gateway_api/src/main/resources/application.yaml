@@ -1,0 +1,50 @@
+server:
+  port: 8084
+
+logging:
+  level:
+    root: INFO  # level of debug for the entire application
+    com.gateway.gateway_api.custom.logging: DEBUG # for production env set up for INFO only or use it carefully
+    
+spring:
+  data:
+    redis:
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT}
+      password: ${REDIS_PASSWORD}
+      ssl:
+        enabled: false
+      timeout: 10000
+      lettuce:
+        cluster:
+          refresh:
+            adaptive: true
+            period: 30s
+        pool:
+          max-active: 20
+          max-idle: 4
+          min-idle: 2
+          max-wait: -1ms
+
+
+application:
+  microservices-config:
+    auth-base-url: ${AUTH_BASE_URL}
+    games-base-url: ${GAME_BASE_URL}
+    preferences-base-url: ${PREFERENCES_BASE_URL}
+    reviews-base-url: ${REVIEWS_BASE_URL}
+    
+  #defines the starting hour where the scheduler can perform a massive
+  #database-cache synchronization for ephemeral data
+  scheduler-config:
+    starting-hour: "11:00" #the ending-hour is equivalent to starting-hour + 5 hours.
+  
+  # Properties for development purposes only. 
+  # If development is set to true the main authentication process will be skipped.
+  # If development is set to true authentication process will only check for role defined below.
+  dev-config:
+    development: false
+    role: 'ADMIN'
+    username: 'DEV'
+  jwt-config:
+    secret-key: ${JWT_SECRET_KEY}
