@@ -4,10 +4,12 @@ This repository contains all the projects (microservices and GatewayAPI) impleme
 
 More details about the architecture and deployment can be read on the report.pdf.
 
+# AWS Deployment Diagram
+
+![Deployment Diagram](Images/AWSCloudDiagram.png)
+
 # How to use
 The projects must be downloaded separately under 'Games Discovery' folder.
 There you can find all the java classes, pom.xml, Dockerfile, yml, DB scripts to generate DB and some optional initial values.
 
 NOTE: the YML files use environment variables, so you must put a value for each by yourselve to be able to run the projects.
-
-![Deployment Diagram](Images/AWSCloudDiagram.png)
