@@ -1,0 +1,24 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+   
+
+application:
+  jwt-config:
+    secret-key: ${JWT_SECRET_KEY}
+    expiration: 1800000 # 30 minutes (30 * 60 * 1000 milliseconds)
+    refresh-token:
+      expiration: 7200000 # 2 hours (2 * 60 * 60 * 1000 milliseconds)
